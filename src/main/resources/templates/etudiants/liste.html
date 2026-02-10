@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Liste</title>
+    <link rel="stylesheet" href="/bootstrap.min.css">
+</head>
+
+<body>
+<div class="container">
+    <h1>Étudiants</h1>
+
+    <a th:href="@{/etudiants/nouveau}">Créer étudiant</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="e : ${etudiants}">
+            <td th:text="${e.id}">1</td>
+            <td th:text="${e.prenom}">John</td>
+            <td th:text="${e.nom}">Doe</td>
+            <td>
+                <a th:href="@{|/etudiants/${e.id}|}">Voir</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="/bootstrap.min.js"></script>
+</body>
+</html>

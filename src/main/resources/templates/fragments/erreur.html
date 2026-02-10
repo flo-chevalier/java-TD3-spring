@@ -1,0 +1,5 @@
+<div data-th-fragment="errorBox">
+    <div data-th-if="${!#lists.isEmpty(erreurs)}" style="border:1px solid #e74c3c;padding:12px;background:#fdecea;color:#9b1c08;margin-bottom:12px;">
+        <div data-th-each="erreur : ${erreurs}" data-th-text="${erreur.message}">Message d'erreur</div>
+    </div>
+</div>
